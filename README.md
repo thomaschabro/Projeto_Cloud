@@ -33,6 +33,8 @@ A partir destes 2 recursos, já é possível criar uma infraestrutura básica. E
 
 - **Cloud Watch**: é o recurso responsável por monitorar o desempenho das instâncias e, consequentemente, trabalhar juntamente com o grupo de autoscaling para atuar quando for necessário (criando ou destruindo instâncias). Para isso, definimos métricas, que serão como as "regras", para que uma instância seja criada ou destruída.
 
+-- **S3**: por último, temos este serviço, responsável por armazenar arquivos. Extremamente importante para um projeto em nuvem, dado que irá armazenar todos arquivos da aplicação.
+
 ---
 
 ### Aplicação
@@ -43,7 +45,9 @@ A aplicação escolhida para o projeto aplica um CRUD básico, em cima de uma ba
 
 ### Como executar
 
-A execução é simples. Uma vez clonado o repositório, abra seu terminal e navegue até a pasta raiz do projeto. Em seguida, execute os seguintes comandos:
+Antes de tudo, para que o bucket S3 funcione corretamente, deve ser criado, manualmente, um bucket com o nome "thomaschabro-bucket", na região us-east-1.
+
+Feito isso, a execução é simples. Uma vez clonado o repositório, abra seu terminal e navegue até a pasta raiz do projeto. Em seguida, execute os seguintes comandos:
 
 > terraform init
 
@@ -51,7 +55,7 @@ A execução é simples. Uma vez clonado o repositório, abra seu terminal e nav
 
 > terraform apply --auto-approve
 
-Uma vez executados, a infraestrutura será criada. Entretanto, pode demorar por volta de 10 minutos. Passado o tempo, o terminal irá printar o link para acesso à aplicação.
+Uma vez executados, a infraestrutura será criada. Entretanto, pode demorar por volta de 10 minutos. Passado o tempo, o terminal irá printar o link para acesso à aplicação. Ainda, uma vez finalizado no terminal, é recomendado que se espere por volta de 3 minutos para acessar de fato a aplicação.
 
 Para destruir a infraestrutura, execute:
 
@@ -107,7 +111,7 @@ Para chegar neste resultado, foram inclusos nos cálculos o seguintes recursos:
 
 - Amazon CloudWatch
     - Registrado com duas métricas (nossas métricas de scale_in e scale_out).
-    - **00,0 USD ao mês**
+    - **00,6    0 USD ao mês**
 
 Caso o hyperlink apresente mal funcionamento, aqui está o link cru:
 https://calculator.aws/#/estimate?id=b4f2bc627491fc7d6770082275cbaccee20f10c4 
