@@ -45,7 +45,7 @@ A aplicação escolhida para o projeto aplica um CRUD básico, em cima de uma ba
 
 ### Como executar
 
-Antes de tudo, para que o bucket S3 funcione corretamente, deve ser criado, manualmente, um bucket com o nome "thomaschabro-bucket", na região us-east-1.
+Antes de tudo, para que o bucket S3 funcione corretamente, deve ser criado, manualmente, um bucket, na região us-east-1. Uma vez criado, deve-se alterar o nome no arquivo main.tf, na linha 13, para o nome escolhido deste novo bucket criado. 
 
 Feito isso, a execução é simples. Uma vez clonado o repositório, abra seu terminal e navegue até a pasta raiz do projeto. Em seguida, execute os seguintes comandos:
 
